@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WelchHW8
 {
-    public partial class Form1 : Form
+    public partial class frmUserInformation : Form
     {
-        public Form1()
+        public frmUserInformation()
         {
             InitializeComponent();
+        }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You clicked this button!");
         }
     }
 }
