@@ -53,6 +53,8 @@
             this.lblAmount = new System.Windows.Forms.Label();
             this.rbWithdrawal = new System.Windows.Forms.RadioButton();
             this.rbDeposit = new System.Windows.Forms.RadioButton();
+            this.lblSelectAccount = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gbIdentifiers.SuspendLayout();
             this.gbAddress.SuspendLayout();
             this.gbDepositWithdrawal.SuspendLayout();
@@ -289,9 +291,9 @@
             this.gbDepositWithdrawal.Controls.Add(this.lblAmount);
             this.gbDepositWithdrawal.Controls.Add(this.rbWithdrawal);
             this.gbDepositWithdrawal.Controls.Add(this.rbDeposit);
-            this.gbDepositWithdrawal.Location = new System.Drawing.Point(402, 24);
+            this.gbDepositWithdrawal.Location = new System.Drawing.Point(373, 65);
             this.gbDepositWithdrawal.Name = "gbDepositWithdrawal";
-            this.gbDepositWithdrawal.Size = new System.Drawing.Size(258, 152);
+            this.gbDepositWithdrawal.Size = new System.Drawing.Size(299, 152);
             this.gbDepositWithdrawal.TabIndex = 2;
             this.gbDepositWithdrawal.TabStop = false;
             this.gbDepositWithdrawal.Text = "Deposit/Withdrawal";
@@ -300,7 +302,7 @@
             // 
             this.btnApprove.Location = new System.Drawing.Point(28, 110);
             this.btnApprove.Name = "btnApprove";
-            this.btnApprove.Size = new System.Drawing.Size(213, 23);
+            this.btnApprove.Size = new System.Drawing.Size(243, 23);
             this.btnApprove.TabIndex = 11;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
@@ -309,7 +311,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(90, 66);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 20);
+            this.textBox3.Size = new System.Drawing.Size(181, 20);
             this.textBox3.TabIndex = 10;
             // 
             // lblAmount
@@ -343,11 +345,30 @@
             this.rbDeposit.Text = "Deposit";
             this.rbDeposit.UseVisualStyleBackColor = true;
             // 
+            // lblSelectAccount
+            // 
+            this.lblSelectAccount.AutoSize = true;
+            this.lblSelectAccount.Location = new System.Drawing.Point(370, 24);
+            this.lblSelectAccount.Name = "lblSelectAccount";
+            this.lblSelectAccount.Size = new System.Drawing.Size(73, 13);
+            this.lblSelectAccount.TabIndex = 3;
+            this.lblSelectAccount.Text = "Existing Users";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(455, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(189, 21);
+            this.comboBox1.TabIndex = 4;
+            // 
             // frmUserInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 416);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lblSelectAccount);
             this.Controls.Add(this.gbDepositWithdrawal);
             this.Controls.Add(this.gbIdentifiers);
             this.Name = "frmUserInformation";
@@ -359,6 +380,7 @@
             this.gbDepositWithdrawal.ResumeLayout(false);
             this.gbDepositWithdrawal.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -389,6 +411,8 @@
         private System.Windows.Forms.RadioButton rbWithdrawal;
         private System.Windows.Forms.RadioButton rbDeposit;
         private System.Windows.Forms.Button btnApprove;
+        private System.Windows.Forms.Label lblSelectAccount;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

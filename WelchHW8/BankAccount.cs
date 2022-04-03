@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WelchHW8
 {
-    internal class BankAccount
+    public class BankAccount
     {
         private string firstName;
         private string lastName;
@@ -113,6 +113,11 @@ namespace WelchHW8
         public void Withdraw(double amount)
         {
             Balance -= amount;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Account holder: {0} {1}\nAddress: {2}\nEmail: {3}\nPhone number: {4}\nAccount Balance {5}", FirstName, LastName, FullAddress(), Email, PhoneNumber, Balance.ToString());
         }
 
     }

@@ -15,8 +15,13 @@ namespace WelchHW8
         static void Main()
         {
             Application.EnableVisualStyles();
+
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUserInformation());
+
+            List<BankAccount> accounts = new List<BankAccount>();
+            BankAccountController accountController = new BankAccountController(accounts);
+
+            Application.Run(new frmUserInformation(accountController));
         }
     }
 }

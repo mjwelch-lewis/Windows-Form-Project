@@ -12,14 +12,25 @@ namespace WelchHW8
 {
     public partial class frmUserInformation : Form
     {
-        public frmUserInformation()
+        private BankAccountController accountController;
+        public frmUserInformation(BankAccountController accountController)
         {
             InitializeComponent();
+            this.accountController = accountController;
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You clicked this button!");
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            string address = txtStreetAddress.Text;
+            string city = txtCity.Text;
+            string state = cmbState.Text;
+            string zipCode = txtZIPCode.Text;
+            string email = txtEmail.Text;
+            string phoneNumber = txtPhoneNumber.Text;
+            accountController.AddAccount(firstName, lastName, address, city, state, zipCode, email, phoneNumber);
+            MessageBox.Show(accountController.GetAccountsAsString());
         }
     }
 }
