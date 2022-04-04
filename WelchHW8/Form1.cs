@@ -30,7 +30,15 @@ namespace WelchHW8
             string zipCode = txtZIPCode.Text;
             string email = txtEmail.Text;
             string phoneNumber = txtPhoneNumber.Text;
-            accountController.AddAccount(firstName, lastName, address, city, state, zipCode, email, phoneNumber);
+            int index = accountController.Exists(firstName, lastName);
+            if (index >= 0)
+            {
+                accountController.UpdateAccountInfo(firstName, lastName, address, city, state, zipCode, email, phoneNumber, index);
+            }
+            else
+            {
+                accountController.AddAccount(firstName, lastName, address, city, state, zipCode, email, phoneNumber);
+            }
             LoadAccountsDropdown();
             ChooseAccountFromDropdown(firstName, lastName);
             MessageBox.Show(accountController.GetAccountsAsString());

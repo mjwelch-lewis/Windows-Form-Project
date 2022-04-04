@@ -19,10 +19,27 @@ namespace WelchHW8
             this.accounts = accounts;
         }
 
+        public int Exists(string firstName, string lastName)
+        {
+            for(int i = 0; i < accounts.Count; i++)
+            {
+                if(accounts[i].FirstName.Equals(firstName) && accounts[i].LastName.Equals(lastName))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
         public void AddAccount(string firstName, string lastName, string address, string city, string state, string zipCode, string email, string phoneNumber)
         {
             BankAccount bankAccount = new BankAccount(firstName, lastName, address, city, state, zipCode, email, phoneNumber);
             accounts.Add(bankAccount);
+        }
+
+        public void UpdateAccountInfo(string firstName, string lastName, string address, string city, string state, string zipCode, string email, string phoneNumber, int index)
+        {
+            BankAccount bankAccount = new BankAccount(firstName, lastName, address, city, state, zipCode, email, phoneNumber);
+            accounts[index] = bankAccount;
         }
 
         public string GetAccountsAsString()
