@@ -19,7 +19,7 @@ namespace WelchHW8
             this.accounts = accounts;
         }
 
-        public int Exists(string firstName, string lastName)
+        public int GetAccountIndexByName(string firstName, string lastName)
         {
             for(int i = 0; i < accounts.Count; i++)
             {
@@ -75,6 +75,7 @@ namespace WelchHW8
                     result.Add("zip code", account.ZipCode);
                     result.Add("email", account.Email);
                     result.Add("phone number", account.PhoneNumber);
+                    result.Add("balance", String.Format("{0:C}", account.Balance));
                     return result;
                 }
             }
@@ -89,6 +90,18 @@ namespace WelchHW8
         public void Load(string fname)
         {
             accounts = BankAccountReader.ReadCoursesFromFile(fname);
+        }
+
+        public double Deposit(int index, double amount)
+        {
+            accounts[index].Balance += amount;
+            return accounts[index].Balance;
+        }
+
+        public double Withdraw(int index, double amount)
+        {
+            accounts[index].Balance -= amount;
+            return accounts[index].Balance;
         }
     }
 }

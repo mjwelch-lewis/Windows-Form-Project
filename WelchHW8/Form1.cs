@@ -30,7 +30,7 @@ namespace WelchHW8
             string zipCode = txtZIPCode.Text;
             string email = txtEmail.Text;
             string phoneNumber = txtPhoneNumber.Text;
-            int index = accountController.Exists(firstName, lastName);
+            int index = accountController.GetAccountIndexByName(firstName, lastName);
             if (index >= 0)
             {
                 accountController.UpdateAccountInfo(firstName, lastName, address, city, state, zipCode, email, phoneNumber, index);
@@ -79,6 +79,7 @@ namespace WelchHW8
                     txtZIPCode.Text = data["zip code"];
                     txtEmail.Text = data["email"];
                     txtPhoneNumber.Text = data["phone number"];
+                    txtAccountBalance.Text = data["balance"];
                 }
             }
             Refresh();
@@ -125,6 +126,24 @@ namespace WelchHW8
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This application demonstrates how to create Windows forms with controls, menus, and save/load dialog boxes.");
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            string[] name = cmbAccountHolderNames.GetItemText(cmbAccountHolderNames.SelectedItem).Split(' ');
+            int index = accountController.GetAccountIndexByName(name[0], name[1]);
+            double amount = Convert.ToDouble(txtAmount.Text);
+            if (rbDeposit.Checked)
+            {
+                txtAccountBalance.Text = String.Format("{0:C}", accountController.Deposit(index, amount));
+                MessageBox.Show(String.Format("You have successfully deposited {0:C} into your account.", amount));
+            }
+            else if (rbWithdrawal.Checked)
+            {
+                txtAccountBalance.Text = String.Format("{0:C}", accountController.Withdraw(index, amount));
+                MessageBox.Show(String.Format("You have successfully withdrawn {0:C} from your account.", amount));
+            }
+            
         }
     }
 }

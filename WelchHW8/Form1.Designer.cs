@@ -49,7 +49,7 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.gbDepositWithdrawal = new System.Windows.Forms.GroupBox();
             this.btnApprove = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.rbWithdrawal = new System.Windows.Forms.RadioButton();
             this.rbDeposit = new System.Windows.Forms.RadioButton();
@@ -297,7 +297,7 @@
             // gbDepositWithdrawal
             // 
             this.gbDepositWithdrawal.Controls.Add(this.btnApprove);
-            this.gbDepositWithdrawal.Controls.Add(this.textBox3);
+            this.gbDepositWithdrawal.Controls.Add(this.txtAmount);
             this.gbDepositWithdrawal.Controls.Add(this.lblAmount);
             this.gbDepositWithdrawal.Controls.Add(this.rbWithdrawal);
             this.gbDepositWithdrawal.Controls.Add(this.rbDeposit);
@@ -316,13 +316,14 @@
             this.btnApprove.TabIndex = 11;
             this.btnApprove.Text = "Approve";
             this.btnApprove.UseVisualStyleBackColor = true;
+            this.btnApprove.Click += new System.EventHandler(this.btnApprove_Click);
             // 
-            // textBox3
+            // txtAmount
             // 
-            this.textBox3.Location = new System.Drawing.Point(90, 66);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtAmount.Location = new System.Drawing.Point(90, 66);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(181, 20);
+            this.txtAmount.TabIndex = 10;
             // 
             // lblAmount
             // 
@@ -496,7 +497,7 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.GroupBox gbDepositWithdrawal;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.RadioButton rbWithdrawal;
         private System.Windows.Forms.RadioButton rbDeposit;
