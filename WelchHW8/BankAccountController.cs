@@ -43,6 +43,25 @@ namespace WelchHW8
             }
             return nameList;
         }
-
+        public Dictionary<string, string> GetDataForAccountByName(string firstName, string lastName)
+        {
+            Dictionary<string, string> result = new Dictionary<string, string>();
+            foreach (BankAccount account in accounts)
+            {
+                if(account.FirstName.Equals(firstName) && account.LastName.Equals(lastName))
+                {
+                    result.Add("first name", account.FirstName);
+                    result.Add("last name", account.LastName);
+                    result.Add("address", account.Address);
+                    result.Add("city", account.City);
+                    result.Add("state", account.State);
+                    result.Add("zip code", account.ZipCode);
+                    result.Add("email", account.Email);
+                    result.Add("phone number", account.PhoneNumber);
+                    return result;
+                }
+            }
+            return null;
+        }
     }
 }

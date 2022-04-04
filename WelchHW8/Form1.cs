@@ -17,6 +17,7 @@ namespace WelchHW8
         {
             InitializeComponent();
             this.accountController = accountController;
+            LoadAccountsDropdown();
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -25,12 +26,54 @@ namespace WelchHW8
             string lastName = txtLastName.Text;
             string address = txtStreetAddress.Text;
             string city = txtCity.Text;
-            string state = cmbState.Text;
+            string state = cmbState.GetItemText(cmbState.SelectedItem);
             string zipCode = txtZIPCode.Text;
             string email = txtEmail.Text;
             string phoneNumber = txtPhoneNumber.Text;
             accountController.AddAccount(firstName, lastName, address, city, state, zipCode, email, phoneNumber);
+            LoadAccountsDropdown();
+            ChooseAccountFromDropdown(firstName, lastName);
             MessageBox.Show(accountController.GetAccountsAsString());
+        }
+        private void LoadAccountsDropdown()
+        {
+            List<string> accountHolderNames = accountController.GetAccountHolderNames();
+            cmbAccountHolderNames.DataSource = accountHolderNames;
+            cmbAccountHolderNames.Refresh();
+        }
+
+        private void ChooseAccountFromDropdown(string firstName, string lastName)
+        {
+            string fullName = firstName + " " + lastName;
+            int index = cmbAccountHolderNames.Items.IndexOf(fullName);
+            if(index >= 0)
+            {
+                cmbAccountHolderNames.SelectedIndex = index;
+            }
+            
+        }
+
+        private void cmbAccountHolderNames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] name;
+            Dictionary<string, string> data = new Dictionary<string, string>();
+            if(cmbAccountHolderNames.SelectedIndex != -1)
+            {
+                name = cmbAccountHolderNames.GetItemText(cmbAccountHolderNames.SelectedItem).Split(' ');
+                data = accountController.GetDataForAccountByName(name[0], name[1]);
+                if(data != null)
+                {
+                    txtFirstName.Text = data["first name"];
+                    txtLastName.Text = data["last name"];
+                    txtStreetAddress.Text = data["address"];
+                    txtCity.Text = data["city"];
+                    cmbState.SelectedIndex = cmbState.Items.IndexOf(data["state"]);
+                    txtZIPCode.Text = data["zip code"];
+                    txtEmail.Text = data["email"];
+                    txtPhoneNumber.Text = data["phone number"];
+                }
+            }
+            Refresh();
         }
     }
 }

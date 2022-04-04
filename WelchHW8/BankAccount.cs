@@ -55,7 +55,7 @@ namespace WelchHW8
             {
                 if(value.IndexOf('@') == -1)
                 {
-                    email = "your@email.CompareTo";
+                    email = "your@email.com";
                 }
                 else
                 {

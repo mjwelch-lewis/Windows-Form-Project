@@ -54,7 +54,7 @@
             this.rbWithdrawal = new System.Windows.Forms.RadioButton();
             this.rbDeposit = new System.Windows.Forms.RadioButton();
             this.lblSelectAccount = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbAccountHolderNames = new System.Windows.Forms.ComboBox();
             this.gbIdentifiers.SuspendLayout();
             this.gbAddress.SuspendLayout();
             this.gbDepositWithdrawal.SuspendLayout();
@@ -354,20 +354,21 @@
             this.lblSelectAccount.TabIndex = 3;
             this.lblSelectAccount.Text = "Existing Users";
             // 
-            // comboBox1
+            // cmbAccountHolderNames
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(455, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbAccountHolderNames.FormattingEnabled = true;
+            this.cmbAccountHolderNames.Location = new System.Drawing.Point(455, 21);
+            this.cmbAccountHolderNames.Name = "cmbAccountHolderNames";
+            this.cmbAccountHolderNames.Size = new System.Drawing.Size(189, 21);
+            this.cmbAccountHolderNames.TabIndex = 4;
+            this.cmbAccountHolderNames.SelectedIndexChanged += new System.EventHandler(this.cmbAccountHolderNames_SelectedIndexChanged);
             // 
             // frmUserInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 416);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbAccountHolderNames);
             this.Controls.Add(this.lblSelectAccount);
             this.Controls.Add(this.gbDepositWithdrawal);
             this.Controls.Add(this.gbIdentifiers);
@@ -412,7 +413,7 @@
         private System.Windows.Forms.RadioButton rbDeposit;
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Label lblSelectAccount;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbAccountHolderNames;
     }
 }
 
