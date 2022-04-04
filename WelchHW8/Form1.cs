@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace WelchHW8
 {
@@ -144,6 +145,19 @@ namespace WelchHW8
                 MessageBox.Show(String.Format("You have successfully withdrawn {0:C} from your account.", amount));
             }
             
+        }
+
+        private void txtAccountBalance_TextChanged(object sender, EventArgs e)
+        {
+            if(Convert.ToDouble(Double.Parse(txtAccountBalance.Text, NumberStyles.Currency)) < 0)
+            {
+                txtAccountBalance.ForeColor = Color.Red;
+                MessageBox.Show("This account has a negative balance!");
+            }
+            else
+            {
+                txtAccountBalance.ForeColor = Color.Black;
+            }
         }
     }
 }

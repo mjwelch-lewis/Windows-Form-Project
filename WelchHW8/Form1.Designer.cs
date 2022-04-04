@@ -389,6 +389,7 @@
             this.txtAccountBalance.Name = "txtAccountBalance";
             this.txtAccountBalance.Size = new System.Drawing.Size(100, 20);
             this.txtAccountBalance.TabIndex = 6;
+            this.txtAccountBalance.TextChanged += new System.EventHandler(this.txtAccountBalance_TextChanged);
             // 
             // menuStrip1
             // 
