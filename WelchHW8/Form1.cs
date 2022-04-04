@@ -116,5 +116,15 @@ namespace WelchHW8
             }
             MessageBox.Show("Data Saved");
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This application demonstrates how to create Windows forms with controls, menus, and save/load dialog boxes.");
+        }
     }
 }
