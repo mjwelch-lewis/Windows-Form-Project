@@ -99,6 +99,18 @@ namespace WelchHW8
             PhoneNumber = phoneNumber;
             Balance = 0;
         }
+        public BankAccount(string firstName, string lastName, string address, string city, string state, string zipCode, string email, string phoneNumber, double balance)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Address = address;
+            City = city;
+            State = state;
+            ZipCode = zipCode;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Balance = balance;
+        }
 
         public string FullAddress()
         {
@@ -118,6 +130,11 @@ namespace WelchHW8
         public override string ToString()
         {
             return String.Format("Account holder: {0} {1}\nAddress: {2}\nEmail: {3}\nPhone number: {4}\nAccount Balance {5}", FirstName, LastName, FullAddress(), Email, PhoneNumber, Balance.ToString());
+        }
+
+        public string ToTabDelimitedString()
+        {
+            return String.Format("{0}\t{1}\t{2}\t{3}\t{4}\t{5}\t{6}\t{7}\t{8}", FirstName, LastName, Address, City, State, ZipCode, Email, PhoneNumber, Balance.ToString());
         }
 
     }

@@ -80,5 +80,15 @@ namespace WelchHW8
             }
             return null;
         }
+
+        public void Save(string fname)
+        {
+            BankAccountWriter.WriteAccountsToFile(fname, accounts);
+        }
+
+        public void Load(string fname)
+        {
+            accounts = BankAccountReader.ReadCoursesFromFile(fname);
+        }
     }
 }

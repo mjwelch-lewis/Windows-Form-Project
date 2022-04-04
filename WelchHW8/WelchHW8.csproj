@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="BankAccount.cs" />
     <Compile Include="BankAccountController.cs" />
+    <Compile Include="BankAccountReader.cs" />
+    <Compile Include="BankAccountWriter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

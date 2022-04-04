@@ -83,5 +83,38 @@ namespace WelchHW8
             }
             Refresh();
         }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlgOpen = new OpenFileDialog();
+            dlgOpen.InitialDirectory = "C:\\temp";
+            dlgOpen.Filter = "text files (*.txt)|*.txt|all files (*.*)|*.*";
+            dlgOpen.FilterIndex = 1;
+            dlgOpen.RestoreDirectory = true;
+            string fname;
+            if(dlgOpen.ShowDialog() == DialogResult.OK)
+            {
+                fname = dlgOpen.FileName;
+                accountController.Load(fname);
+            }
+            LoadAccountsDropdown();
+            Refresh();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlgSave = new SaveFileDialog();
+            dlgSave.InitialDirectory = "C:\\temp";
+            dlgSave.Filter = "text files (*.txt)|*.txt|all files (*.*)|*.*";
+            dlgSave.FilterIndex = 1;
+            dlgSave.RestoreDirectory = true;
+            string fname;
+            if (dlgSave.ShowDialog() == DialogResult.OK)
+            {
+                fname = dlgSave.FileName;
+                accountController.Save(fname);
+            }
+            MessageBox.Show("Data Saved");
+        }
     }
 }
