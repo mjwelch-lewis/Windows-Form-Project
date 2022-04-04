@@ -87,7 +87,7 @@
             this.gbIdentifiers.Size = new System.Drawing.Size(324, 373);
             this.gbIdentifiers.TabIndex = 0;
             this.gbIdentifiers.TabStop = false;
-            this.gbIdentifiers.Text = "Identifiers";
+            this.gbIdentifiers.Text = "Account Holder Data";
             // 
             // btnCreateAccount
             // 
@@ -462,7 +462,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmUserInformation";
-            this.Text = "User Information";
+            this.Text = "Bank Account Information";
             this.gbIdentifiers.ResumeLayout(false);
             this.gbIdentifiers.PerformLayout();
             this.gbAddress.ResumeLayout(false);
