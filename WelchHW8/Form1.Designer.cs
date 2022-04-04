@@ -55,6 +55,8 @@
             this.rbDeposit = new System.Windows.Forms.RadioButton();
             this.lblSelectAccount = new System.Windows.Forms.Label();
             this.cmbAccountHolderNames = new System.Windows.Forms.ComboBox();
+            this.lblAccountBalance = new System.Windows.Forms.Label();
+            this.txtAccountBalance = new System.Windows.Forms.TextBox();
             this.gbIdentifiers.SuspendLayout();
             this.gbAddress.SuspendLayout();
             this.gbDepositWithdrawal.SuspendLayout();
@@ -291,7 +293,7 @@
             this.gbDepositWithdrawal.Controls.Add(this.lblAmount);
             this.gbDepositWithdrawal.Controls.Add(this.rbWithdrawal);
             this.gbDepositWithdrawal.Controls.Add(this.rbDeposit);
-            this.gbDepositWithdrawal.Location = new System.Drawing.Point(373, 65);
+            this.gbDepositWithdrawal.Location = new System.Drawing.Point(373, 245);
             this.gbDepositWithdrawal.Name = "gbDepositWithdrawal";
             this.gbDepositWithdrawal.Size = new System.Drawing.Size(299, 152);
             this.gbDepositWithdrawal.TabIndex = 2;
@@ -363,11 +365,29 @@
             this.cmbAccountHolderNames.TabIndex = 4;
             this.cmbAccountHolderNames.SelectedIndexChanged += new System.EventHandler(this.cmbAccountHolderNames_SelectedIndexChanged);
             // 
+            // lblAccountBalance
+            // 
+            this.lblAccountBalance.AutoSize = true;
+            this.lblAccountBalance.Location = new System.Drawing.Point(368, 59);
+            this.lblAccountBalance.Name = "lblAccountBalance";
+            this.lblAccountBalance.Size = new System.Drawing.Size(89, 13);
+            this.lblAccountBalance.TabIndex = 5;
+            this.lblAccountBalance.Text = "Account Balance";
+            // 
+            // txtAccountBalance
+            // 
+            this.txtAccountBalance.Location = new System.Drawing.Point(544, 56);
+            this.txtAccountBalance.Name = "txtAccountBalance";
+            this.txtAccountBalance.Size = new System.Drawing.Size(100, 20);
+            this.txtAccountBalance.TabIndex = 6;
+            // 
             // frmUserInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 416);
+            this.Controls.Add(this.txtAccountBalance);
+            this.Controls.Add(this.lblAccountBalance);
             this.Controls.Add(this.cmbAccountHolderNames);
             this.Controls.Add(this.lblSelectAccount);
             this.Controls.Add(this.gbDepositWithdrawal);
@@ -414,6 +434,8 @@
         private System.Windows.Forms.Button btnApprove;
         private System.Windows.Forms.Label lblSelectAccount;
         private System.Windows.Forms.ComboBox cmbAccountHolderNames;
+        private System.Windows.Forms.Label lblAccountBalance;
+        private System.Windows.Forms.TextBox txtAccountBalance;
     }
 }
 
